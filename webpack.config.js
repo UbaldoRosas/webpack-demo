@@ -42,6 +42,12 @@ module.exports = {
                     'file-loader',
                 ],
             },
+            {
+                test : /\.xml$/,
+                use : [
+                    'xml-loader'
+                ]
+            }
         ]
     }
 }
