@@ -1,0 +1,5 @@
+.hello {
+    color: red;
+    display: flex;
+    background: url('./icon.png');
+}
