@@ -18,8 +18,21 @@ module.exports = {
 		})
 	],
     output : {
-		filename : '[name].bundle.js',
-		chunkFilename: '[name].bundle.js',
+		filename : '[name].[contenthash].js',
+		chunkFilename: '[name].js',
         path : path.resolve(__dirname, 'dist')
+	},
+	optimization : {
+		moduleIds: 'hashed',
+		runtimeChunk: 'single',
+		splitChunks : {
+			cacheGroups : {
+				vendor : {
+					test : /[\\/]node_modules[\\/]/,
+					name : 'vendors',
+					chunks : 'all'
+				}
+			}
+		}
 	}
 }
